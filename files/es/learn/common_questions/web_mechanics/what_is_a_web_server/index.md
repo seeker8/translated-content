@@ -1,11 +1,13 @@
 ---
 title: ¿Qué es un servidor WEB?
 slug: Learn/Common_questions/Web_mechanics/What_is_a_web_server
+l10n:
+  sourceCommit: b2af4eb16dd4c399ed81f67efd49777fa6ae9030
 ---
 
-{{QuicklinksWithSubPages("Learn/Common_questions")}}
+{{QuicklinksWithSubPages("/es/Learn/Common_questions")}}
 
-En este articulo veremos que son los servidores, cómo funcionan y por qué son importantes.
+En este artículo veremos que son los servidores web, cómo funcionan y por qué son importantes.
 
 <table>
   <tbody>
@@ -14,17 +16,17 @@ En este articulo veremos que son los servidores, cómo funcionan y por qué son 
       <td>
         Debes saber
         <a href="/es/docs/Learn/Common_questions/Web_mechanics/How_does_the_Internet_work"
-          >cómo funciona internet</a
+          >cómo funciona el internet</a
         >, y
         <a href="/es/docs/Learn/Common_questions/Web_mechanics/Pages_sites_servers_and_search_engines"
-          >entender la diferencia entre página web, sitio web, servidor y
+          >entender la diferencia entre página web, sitio web, servidor web y
           motor de búsqueda</a
         >
       </td>
     </tr>
     <tr>
       <th scope="row">Objetivo:</th>
-      <td>Aprender qué es un servidor web y comprender cómo funciona.</td>
+      <td>Aprenderas qué es un servidor web y comprenderas cómo funciona de manera general.</td>
     </tr>
   </tbody>
 </table>
@@ -48,10 +50,6 @@ Un **servidor web dinámico** consiste en un servidor web estático con software
 
 Por ejemplo, para producir las páginas web que finalmente ves en tu navegador, la _aplicación servidor_ podría llenar una plantilla HTML con contenido obtenido de una base de datos. Sitios como MDN o Wikipedia tienen miles de páginas web, que no son realmente archivos HTML. Típicamente, este tipo de sitios se componen de unas pocas plantillas HTML y una gigantesca base de datos, en vez de miles de documentos HTML estáticos. Esto hace mas fácil el mantenimiento y entrega del contenido.
 
-## Aprendizaje activo
-
-_No hay aprendizaje activo disponible. [**Por favor, considere colaborar.**](/es/docs/MDN/Community/Contributing/Getting_started)_
-
 ## Inmersión más profunda
 
 Recapitulando: para obtener una página web, como ya dijimos, tu navegador envía una solicitud al servidor web, que procede a buscar el archivo solicitado en su propio espacio de almacenamiento. Encontrado el archivo, el servidor lo lee, lo procesa según sea necesario y lo envía al navegador. Veamos esos pasos con más detalle.
@@ -64,7 +62,7 @@ Técnicamente, puede alojar todos esos archivos en su propia computadora, pero e
 
 - siempre está funcionando.
 - siempre está conectado a internet.
-- tiene la misma dirección IP todo el tiempo.
+- tiene la misma dirección IP todo el tiempo. A esto se le conoce como una _dirección IP dedicada_. (No todos los {{Glossary("ISP", "ISPs")}} proporcionan una dirección IP fija para lineas caseras.)
 - es mantenido por un proveedor externo.
 
 Por todas estas razones, encontrar un buen proveedor de alojamiento es una parte clave del desarrollo de su sitio web. Investigue a través de los diversos servicios que ofrecen las compañías y elija uno que se ajuste a sus necesidades y a su presupuesto (los servicios van desde los gratuitos hasta los miles de dólares al mes). Puede encontrar mas información [en este artículo](/es/docs/Learn/Common_questions/Tools_and_setup/How_much_does_it_cost#alojamiento).
@@ -75,7 +73,7 @@ Una vez que configura una solución de alojamiento web, solo tiene que [cargar s
 
 En segundo lugar, un servidor web brinda soporte para HTTP (**H**yper**t**ext **T**ransfer **P**rotocol ó Protocolo de Transferencia de Hipertexto). Como su nombre lo indica, HTTP especifica cómo transferir hypertext (es decir, documentos web vinculados) entre dos computadoras.
 
-Un _protocolo_ es un conjunto de reglas para la comunicación entre dos computadoras. HTTP es un protocolo textual, sin estado.
+Un {{Glossary("Protocol", "protocolo")}} es un conjunto de reglas para la comunicación entre dos computadoras. HTTP es un protocolo textual, sin estado.
 
 - Textual
   - : Todos los comandos son de texto plano y legible para ser leído por humanos.
@@ -84,15 +82,16 @@ Un _protocolo_ es un conjunto de reglas para la comunicación entre dos computad
 
 HTTP proporciona reglas claras sobre cómo se comunican un cliente y un servidor. Cubriremos el propio HTTP en un [artículo técnico](/es/docs/Web/HTTP) más adelante. Por ahora, sólo sé consciente de estas cosas:
 
-- Solo los clientes pueden hacer solicitudes HTTP a los servidores. Los servidores solo pueden responder a la solicitud HTTP de un cliente.
-- Al solicitar un archivo a través de HTTP, los clientes deben proporcionar la URL del archivo.
+- Usualmente solo los clientes hacen solicitudes HTTP, ysolo a servidores. Los servidores responden a la solicitud HTTP de un cliente. Un servidor puede también popular información en el cache del cliente previo a que sea solicitada a través de un mechanismo llamado [server push](https://en.wikipedia.org/wiki/HTTP/2_Server_Push).
+- Al solicitar un archivo a través de HTTP, los clientes deben proporcionar la {{Glossary("URL")}} del archivo.
 - El servidor web debe responder a todas las solicitudes HTTP, al menos con un mensaje de error.
 
-[![The MDN 404 page as an example of such error page](mdn-404.jpg)](/es/docs/Web/HTTP/Status/404) En un servidor web, el servidor HTTP es responsable de procesar y responder las solicitudes entrantes.
+En un servidor web, el servidor HTTP es responsable de procesar y responder las solicitudes entrantes.
 
 1. Al recibir una solicitud, un servidor HTTP primero verifica si la URL solicitada coincide con un archivo existente.
-2. Si es así, el servidor web envía el contenido del archivo de nuevo al navegador. Si no, un servidor de aplicaciones construye el archivo necesario.
-3. Si ninguno de los procesos es posible, el servidor web devuelve un mensaje de error al navegador, generalmente "404 Not Found". ( Ese error es tan común que muchos diseñadores web pasan bastante tiempo diseñando páginas de error 404.)
+2. Si es así, el servidor web envía el contenido del archivo de nuevo al navegador. Si no, el servidor revisará si debe generar el archivo dinámicamente para la solicitud (vea [Static vs. dynamic content](#contenido_estático_vs._dinámico)).
+3. Si ninguno de los procesos es posible, el servidor web devuelve un mensaje de error al navegador, generalmente {{HTTPStatus("404", "404 Not Found")}}. Ese error es tan común que muchos diseñadores web pasan bastante tiempo diseñando páginas de error 404.
+![The MDN 404 page as an example of such error page](mdn-404.jpg)
 
 ### Contenido Estático vs. Dinámico
 
