@@ -31,7 +31,7 @@ En este artículo veremos que son los servidores web, cómo funcionan y por qué
   </tbody>
 </table>
 
-## Sumario
+## Resumen
 
 Con "Servidor web" podemos referirnos a hardware o software, o a ambos trabajando juntos.
 
