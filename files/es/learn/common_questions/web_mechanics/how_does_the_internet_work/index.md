@@ -1,9 +1,11 @@
 ---
 title: ¿Cómo funciona Internet?
 slug: Learn/Common_questions/Web_mechanics/How_does_the_Internet_work
+l10n:
+  sourceCommit: 9de3d03957f1d66f02f45400a6981372aa368c1f
 ---
 
-{{QuicklinksWithSubPages("Learn/Common_questions")}}
+{{QuicklinksWithSubPages("/es/Learn/Common_questions")}}
 
 En este artículo se describe qué es Internet y cómo funciona.
 
@@ -31,7 +33,7 @@ En este artículo se describe qué es Internet y cómo funciona.
 
 ## Resumen
 
-**Internet** es la columna vertebral de la Web, la infraestructura técnica que la hace posible. En su esencia, Internet es una gran red de computadoras que se comunican simultáneamente.
+El **Internet** es la columna vertebral de la Web, la infraestructura técnica que la hace posible. En esencia, el Internet es una gran red de computadoras que se comunican simultáneamente.
 
 [La historia de internet es algo oscura](http://en.wikipedia.org/wiki/Internet#History). Comenzó en la década de 1960 como un proyecto de investigación financiado por el ejercito de los EE.UU, y luego se convirtió en una infraestructura pública en la década de 1980 con el apoyo de muchas universidades públicas y empresas privadas. Las distintas tecnologías que soporta internet han evolucionado con el tiempo, pero la forma en que funciona no ha cambiado mucho: Internet es una forma de conectar las computadoras entre sí y asegurar que, pase lo que pase, encuentren una manera de mantenerse conectadas.
 
@@ -90,6 +92,17 @@ Para los ordenadores es un identificador simple, pero los humanos tenemos mayor 
 ### Internet y la web
 
 Como puedes notar, cuando navegamos por la web con un navegador, normalmente utilizamos el nombre de dominio para llegar a un sitio web. ¿Significa eso que Internet y la Web son la misma cosa? No es tan simple. Como vimos, Internet es una infraestructura técnica que permite que miles de millones de ordenadores estén conectadas entre sí. Algunos de estos ordenadores, llamados _servidores web_ son capaces de enviar mensajes inteligibles a los navegadores. Por tanto _Internet_ es una infraestructura, mientras que la _Web_ es un servicio construido sobre dicha infraestructura. Cabe señalar que existen otros servicios soportados por Internet, como es el correo electrónico e {{Glossary("IRC")}}.
+
+### Intranets y Extranets
+
+Las Intranets son redes _privadas_ que estan restringidas a ciertos miembros de una organización.
+Son usadas comunmente para propocionar un portal para que los miembros puedas acceder de manera segura a recursos compartidos, colaborar y comunicarse. Por ejemplo, una intranet de una organización puede hospedar páginas web para compartir información de un departamento o un equipo, discos compartidos para administrar documentos y archivos clave, portales para desempeñar tareas administrativas, compartir herramientas de colaboración como wikis, tablones de discución y sistemas de mensajes.
+
+Las Extranets son muy parecidas a las Intranets, excepto que estas abren todo o parte de una red privada para permitir compartir o colaborar con otras organizaciones. Son usadas típicamente para compartir información de manera segura con clientes e inversionistas que trabajan de manera cercana con el negocio. Muchas veces sus funciones son similares a las provistas por una intranet: intercambio de información y archivos, herramientas de colaboracion, tablones de discución, etc.
+
+Ambas intranets y extranets funcionan en el mismo tipo de infrestructura que el Internet, y utilizan los mismos protocoloes. Por lo tanto, pueden ser accesadas por miembros autorizados desde distintas ubicaciones.
+
+![Graphical Representation of how Extranet and Intranet work](internet-schema-8.png)
 
 ## Próximos pasos
 
