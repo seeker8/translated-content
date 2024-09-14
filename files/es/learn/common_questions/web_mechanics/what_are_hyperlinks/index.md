@@ -1,9 +1,11 @@
 ---
 title: ¿Qué son los hipervínculos?
 slug: Learn/Common_questions/Web_mechanics/What_are_hyperlinks
+l10n:
+  sourceCommit: bb026bcb88b7f45374d602301b7b0db5a49ff303
 ---
 
-{{QuicklinksWithSubPages("Learn/Common_questions")}}
+{{QuicklinksWithSubPages("/es/Learn/Common_questions")}}
 
 En este artículo, repasaremos qué son los hipervínculos y por qué son importantes.
 
@@ -13,7 +15,7 @@ En este artículo, repasaremos qué son los hipervínculos y por qué son import
       <th scope="row">Prerrequisitos:</th>
       <td>
         Debes saber
-        <a href="/es/Learn/How_the_Internet_works">como funciona internet</a>.
+        <a href="/es/Learn/How_the_Internet_works">como funciona el internet</a>.
         Y estar familiarizado con<a
           href="/es/docs/Learn/page_vs_site_vs_server_vs_search_engine"
         >
