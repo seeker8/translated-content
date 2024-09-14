@@ -50,7 +50,7 @@ Un **servidor web dinámico** consiste en un servidor web estático con software
 
 Por ejemplo, para producir las páginas web que finalmente ves en tu navegador, la _aplicación servidor_ podría llenar una plantilla HTML con contenido obtenido de una base de datos. Sitios como MDN o Wikipedia tienen miles de páginas web, que no son realmente archivos HTML. Típicamente, este tipo de sitios se componen de unas pocas plantillas HTML y una gigantesca base de datos, en vez de miles de documentos HTML estáticos. Esto hace mas fácil el mantenimiento y entrega del contenido.
 
-## Inmersión más profunda
+## Profundizando
 
 Recapitulando: para obtener una página web, como ya dijimos, tu navegador envía una solicitud al servidor web, que procede a buscar el archivo solicitado en su propio espacio de almacenamiento. Encontrado el archivo, el servidor lo lee, lo procesa según sea necesario y lo envía al navegador. Veamos esos pasos con más detalle.
 

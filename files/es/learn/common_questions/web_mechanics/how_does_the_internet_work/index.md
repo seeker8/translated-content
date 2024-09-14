@@ -42,7 +42,7 @@ El **Internet** es la columna vertebral de la Web, la infraestructura técnica q
 - [Cómo funciona internet explicado en 5 minutos](https://www.youtube.com/watch?v=7_LPdttKXPc): Un vídeo de 5 minutos para entender los fundamentos de internet por Aaron Titus.
 - [¿Cómo funciona Internet?](https://www.youtube.com/watch?v=x3c1ih2NJEg) Video detallado de 8 minutos de visualización.
 
-## Profundizar
+## Profundizando
 
 ### Una simple red
 
