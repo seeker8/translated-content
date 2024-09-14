@@ -1,9 +1,11 @@
 ---
 title: ¿Qué es una URL?
 slug: Learn/Common_questions/Web_mechanics/What_is_a_URL
+l10n:
+  sourceCommit: 6b730e3cfdf0f51940b44efa71bd59c84ce76e71
 ---
 
-{{QuicklinksWithSubPages("Learn/Common_questions")}}
+{{QuicklinksWithSubPages("/es/Learn/Common_questions")}}
 
 Este artículo habla sobre las Uniform Resource Locators (URLs), explicando qué son y cómo se estructuran.
 
@@ -14,7 +16,7 @@ Este artículo habla sobre las Uniform Resource Locators (URLs), explicando qué
       <td>
         Primero necesitas saber
         <a href="/es/docs/Learn/Common_questions/Web_mechanics/How_does_the_Internet_work"
-          >Cómo funciona Internet</a
+          >Cómo funciona el Internet</a
         >,
         <a href="/es/docs/Learn/Common_questions/Web_mechanics/What_is_a_web_server"
           >qué es un servidor Web</a
@@ -34,44 +36,57 @@ Este artículo habla sobre las Uniform Resource Locators (URLs), explicando qué
 
 ## Resumen
 
-Junto con el {{Glossary("Hypertext", "Hipertexto")}} y {{Glossary("HTTP")}}, las **_URL_** son uno de los conceptos claves de la Web. Es el mecanismo usado por los {{Glossary("Browser","navegadores")}} para obtener cualquier recurso publicado en la web.
+**URL** significa _Uniform Resource Locator (Localizador de Recursos Uniforme)_. Una URL no es más que una dirección que es dada a un recurso único en internet. Es uno de los mecanismos claver usado por los {{Glossary("Browser","navegadores")}} para obtener recursos publicados en la web, como páginas HTML, documentos CSS, imagenes, etc.
 
-**URL** significa _Uniform Resource Locator (Localizador de Recursos Uniforme)_. Una URL no es más que una dirección que es dada a un recurso único en la Web. En teoria, cada URL válida apunta a un único recurso. Dichos recursos pueden ser páginas HTML, documentos CSS, imagenes, etc. En la practica, hay algunas excepciones, siendo la más común una URL apuntando a un recurso que ya no existe o que ha sido movido. Como el recurso representado por la URL y la URL en si son manejadas por el servidor Web, depende del dueño del servidor web manejar ese recurso y su URL asociada adecuadamente.
+ En teoria, cada URL válida apunta a un único recurso. En la practica, hay algunas excepciones, siendo la más común una URL apuntando a un recurso que ya no existe o que ha sido movido. Como el recurso representado por la URL y la URL en si son manejadas por el servidor Web, depende del dueño del servidor web manejar ese recurso y su URL asociada adecuadamente.
 
-## Aprendizaje activo
-
-_Por el momento no hay aprendizaje activo disponible. [Por favor, considere contribuir](/es/docs/MDN/Community/Contributing/Getting_started)._
-
-## Profundizando
-
-### Conceptos básicos: anatomía de una URL
+## Conceptos básicos: anatomía de una URL
 
 Aquí hay algunos ejemplos de URL:
 
 ```
 https://developer.mozilla.org
 https://developer.mozilla.org/es/docs/Learn/
-https://developer.mozilla.org/en-US/search?q=URL
+https://developer.mozilla.org/es/search?q=URL
 ```
 
-Cualquiera de esas URL se puede escribir en la barra de direcciones de su navegador para indicarle que cargue la página (recurso) asociada.
+Cualquiera de esas URL se puede escribir en la barra de direcciones de su navegador para indicarle que cargue el recurso asociado, el cual en los tres casos es una página web.
 
-Una URL está compuesta de diferentes partes, algunas obligatorias y otras opcionales. Veamos las partes más importantes usando la siguiente URL:
+Una URL está compuesta de diferentes partes, algunas obligatorias y otras opcionales. Las partes más importantes estan resaltadas en la URL a continuación (revisaremos los detalles en las siguientes secciones):
 
-```
-http://www.example.com:80/path/to/myfile.html?key1=value1&key2=value2#SomewhereInTheDocument
-```
+![full URL](mdn-url-all.png)
 
-- ![Protocol](mdn-url-protocol@x2_update.png)
+> [!NOTE]
+> You might think of a URL like a regular postal mail address: the _scheme_ represents the postal service you want to use, the _domain name_ is the city or town, and the _port_ is like the zip code; the _path_ represents the building where your mail should be delivered; the _parameters_ represent extra information such as the number of the apartment in the building; and, finally, the _anchor_ represents the actual person to whom you've addressed your mail.
+
+> [!NOTE]
+> There are [some extra parts and some extra rules](https://en.wikipedia.org/wiki/Uniform_Resource_Locator) regarding URLs, but they are not relevant for regular users or Web developers. Don't worry about this, you don't need to know them to build and use fully functional URLs.
+
+## Scheme
+
+![Scheme](mdn-url-protocol@x2_update.png)
+
   - : `http` es el protocolo. La primera parte de la URL indica qué protocolo debe usar el navegador. Un protocolo es un método establecido para intercambiar o transferir datos alrededor de una red informática. Por lo general, para sitios web es el protocolo HTTP o su versión segura, HTTPS. La Web requiere uno de estos dos, pero los navegadores también saben cómo manejar otros protocolos como mailto: (para abrir un cliente de correo) o ftp: para manejar la transferencia de archivos, así que no se sorprenda si ve tales protocolos.
+
+## Authority
+
 - ![Domaine Name](mdn-url-domain@x2.png)
   - : `www.example.com` es el nombre de dominio. Indica qué servidor web se solicita. Alternativamente, es posible usar directamente una {{Glossary("IP Address", "dirección IP")}}, pero debido a que es menos conveniente, no se usa con frecuencia en la Web.
 - ![Port](mdn-url-port@x2.png)
   - : `:80` es el puerto. Indica la "puerta" técnica utilizada para acceder a los recursos en el servidor web. Por lo general, se omite si el servidor web utiliza los puertos estándar del protocolo HTTP (80 para HTTP y 443 para HTTPS) para otorgar acceso a sus recursos. De lo contrario es obligatorio.
+
+## Path to resource
+
 - ![Path to the file](mdn-url-path@x2.png)
   - : `/path/to/myfile.html` es la ruta al recurso en el servidor web. En los primeros días de la Web, una ruta como esta representaba la ubicación de un archivo físico en el servidor web. Hoy en día, es principalmente una abstracción manejada por servidores web sin ninguna realidad física.
+
+## Parameters
+
 - ![Parameters](mdn-url-parameters@x2.png)
   - : `?key1=value1&key2=value2` son parámetros adicionales proporcionados al servidor web. Esos parámetros son una lista de pares clave/valor separados con el símbolo &. El servidor web puede usar esos parámetros para hacer cosas adicionales antes de devolver el recurso. Cada servidor web tiene sus propias reglas con respecto a los parámetros, y la única forma confiable de saber si un servidor web específico está manejando parámetros es preguntando al propietario del servidor web.
+
+## Anchor
+
 - ![Anchor](mdn-url-anchor@x2.png)
   - : `#SomewhereInTheDocument` es un ancla para otra parte del recurso en sí. Un ancla representa una especie de "marcador" dentro del recurso, dando al navegador las instrucciones para mostrar el contenido ubicado en ese lugar "marcado". En un documento HTML, por ejemplo, el navegador se desplazará hasta el punto donde se define el ancla; en un video o documento de audio, el navegador intentará ir a la hora que representa el ancla. Vale la pena señalar que la parte después del #, también conocido como el identificador de fragmento, nunca se envía al servidor con la solicitud.
 
@@ -80,7 +95,7 @@ http://www.example.com:80/path/to/myfile.html?key1=value1&key2=value2#SomewhereI
 
 Puede pensar en una URL como una dirección de correo postal normal: el protocolo representa el servicio postal que desea utilizar, el nombre de dominio es la ciudad o el pueblo y el puerto es como el código postal; la ruta representa el edificio donde se debe entregar su correo; los parámetros representan información adicional como el número de apartamento en el edificio; y, finalmente, el ancla representa a la persona real a la que ha dirigido su correo.
 
-### Cómo usar las URL
+## Cómo usar las URL
 
 Se puede escribir cualquier URL dentro de la barra de direcciones del navegador para acceder al recurso que se encuentra detrás. ¡Pero esto es sólo la punta del iceberg!
 
@@ -96,7 +111,7 @@ El lenguaje {{Glossary("HTML")}} — [que se discutirá más adelante](/es/docs/
 
 Otras tecnologías, como {{Glossary("CSS")}} o {{Glossary("JavaScript")}}, usan URLs ampliamente, y estos son realmente el corazón de la Web.
 
-### URL absolutas vs URL relativas
+## URL absolutas vs URL relativas
 
 Lo que vimos arriba se llama URL absoluta, pero también hay algo llamado URL relativa. Examinemos lo que significa esa distinción con más detalle.
 
@@ -181,7 +196,7 @@ Para comprender mejor los siguientes ejemplos, supongamos que las URL se invocan
   </tbody>
 </table>
 
-### URL semánticas
+## URL semánticas
 
 A pesar de su sabor muy técnico, las URL representan un punto de entrada legible para un sitio web. Se pueden memorizar y cualquiera puede ingresarlos en la barra de direcciones de un navegador. Las personas están en el centro de la Web, por lo que se considera una buena práctica construir lo que se llama [_URL semánticas_](http://en.wikipedia.org/wiki/Semantic_URL). Las URL semánticas usan palabras con un significado inherente que cualquier persona puede entender, independientemente de sus conocimientos técnicos.
 
@@ -194,3 +209,7 @@ La semántica lingüística es, por supuesto, irrelevante para las computadoras.
 ## Próximos pasos
 
 - [Comprendiendo nombres de dominio](/es/docs/Learn/Common_questions/Web_mechanics/What_is_a_domain_name)
+
+## See also
+
+[Data URLs](/en-US/docs/Web/URI/Schemes/data): URLs prefixed with the `data:` scheme, allow content creators to embed small files inline in documents.
