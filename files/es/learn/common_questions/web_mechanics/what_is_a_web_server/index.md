@@ -26,7 +26,7 @@ En este artículo veremos que son los servidores web, cómo funcionan y por qué
     </tr>
     <tr>
       <th scope="row">Objetivo:</th>
-      <td>Aprenderas qué es un servidor web y comprenderas cómo funciona de manera general.</td>
+      <td>Aprender qué es un servidor web y comprender cómo funciona de manera general.</td>
     </tr>
   </tbody>
 </table>
